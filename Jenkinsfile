@@ -3,53 +3,25 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'pipeline {
-    agent any
-    stages {
-        stage('Clone Repository') {
-            steps {
-                git branch: 'main', url: 'https://github.com/your-username/your-repo.git'
+                git branch: 'main', url: 'https://github.com/Anurag-Negi28/DemoCICD.git'
             }
         }
         stage('Build') {
             steps {
                 echo "Building the project..."
-                // Add build steps here
+                // Add build steps here (e.g., mvn package, npm install, etc.)
             }
         }
         stage('Test') {
             steps {
                 echo "Running tests..."
-                // Run tests here
+                // Run tests here (e.g., sh 'npm test' or sh './run-tests.sh')
             }
         }
         stage('Deploy') {
             steps {
                 echo "Deploying application..."
-                // Deployment steps
-            }
-        }
-    }
-}
-'
-            }
-        }
-        stage('Build') {
-            steps {
-                echo "Building the project..."
-                // Add build steps here
-            }
-        }
-        stage('Test') {
-            steps {
-                echo "Running tests..."
-                // Run tests here
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo "Deploying application..."
-                // Deployment steps
+                // Deployment steps (e.g., Docker push, SCP commands, etc.)
             }
         }
     }
